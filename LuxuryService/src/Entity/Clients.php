@@ -15,7 +15,7 @@ class Clients
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=true)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,49 +24,49 @@ class Clients
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="activity_type", type="string", length=255, nullable=false)
+     * @ORM\Column(name="activity_type", type="string", length=255, nullable=true)
      */
     private $activityType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="job_type", type="string", length=255, nullable=false)
+     * @ORM\Column(name="job_type", type="string", length=255, nullable=true)
      */
     private $jobType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contact_name", type="string", length=255, nullable=false)
+     * @ORM\Column(name="contact_name", type="string", length=255, nullable=true)
      */
     private $contactName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contact_email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="contact_email", type="string", length=255, nullable=true)
      */
     private $contactEmail;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="contact_tel", type="integer", nullable=false)
+     * @ORM\Column(name="contact_tel", type="string", length=255, nullable=true)
      */
     private $contactTel;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="notes", type="string", length=255, nullable=false)
+     * @ORM\Column(name="notes", type="string", length=255, nullable=true)
      */
     private $notes;
 
@@ -135,12 +135,12 @@ class Clients
         return $this;
     }
 
-    public function getContactTel(): ?int
+    public function getContactTel(): ?string
     {
         return $this->contactTel;
     }
 
-    public function setContactTel(int $contactTel): self
+    public function setContactTel(string $contactTel): self
     {
         $this->contactTel = $contactTel;
 

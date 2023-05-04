@@ -1,0 +1,64 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+
+{% block stylesheets %}
+    <link href="/LuxuryService/public/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create a new Client!</h1>
+                        </div>
+
+                        <form name="save_client" class="user" action="{{ path('app_admin_client_save') }}" method="post">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control form-control-user" id="name"
+                                        placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="activity_type" class="form-control form-control-user" id="activity_type"
+                                        placeholder="Type of Activity">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="job_type" class="form-control form-control-user" id="job_type"
+                                    placeholder="Type of Job">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contact_name" class="form-control form-control-user" id="contact_name"
+                                    placeholder="Name of Contact">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="contact_email" class="form-control form-control-user" id="contact_email"
+                                    placeholder="Email of Contact">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="contact_tel" class="form-control form-control-user" id="contact_tel"
+                                    placeholder="Phone">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                 Add
+                            </button>
+                            <hr>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

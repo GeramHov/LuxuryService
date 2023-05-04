@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$black : #17252A;
+$darkgreen : #2B7A78;
+$green : #3AAFA9;
+$light: #DEF2F1;
+$white: #FEFFFF;
+$orange: #FFA500;
+$roboto : 'Roboto', sans-serif;
+$slab : 'Roboto Slab', serif;
+
+$unchecked-star: '\2606';
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: #e52;
+
+
+@mixin hoverAnimationIn {
+    transform: scale(1.06);
+    transition: 0.4s ease;
+}
+
+@mixin hoverAnimationOut{
+    transform: scale(1.0);
+    transition: 0.4s ease; 
+}
+
+.star-cb-group {
+  font-size: 2rem;
+  * {
+    font-size: 1.5rem;
+  }
+  
+  
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: $unchecked-color;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+  }
+  
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
+
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: $unchecked-color;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: $checked-star;
+    color: $checked-color;
+    text-shadow: 0 0 1px #333;
+  }
+}
+
+
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
+}
+
+#feedback{
+    display: none;
+}
+
+
+// HIDDEN RED DOT TO SHOW CARD IS FULL
+#reddot{
+    position: relative;
+    right: 1vw;
+    visibility: hidden;
+}
+
+#commentbox{
+    width: 52em;
+}
+
+#userphoto{
+    display: hidden;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.text-orange{
+    color: $orange;
+}
+
+.text-black{
+    color: $black;
+}
+
+body{
+    font-family: $roboto;
+    overflow-x: hidden;
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: $roboto;
+        cursor: default;
+    }
+
+    scrollbar-width: none; /* pour Firefox */
+  &::-webkit-scrollbar {
+    width: 0.5rem; /* ajuster la largeur de la barre de défilement */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $black; /* couleur de la barre de défilement */
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $light; /* couleur de la piste de la barre de défilement */
+  }
+
+
+}
+
+.text-green{
+    color: $darkgreen;
+}
+
+p{
+    font-family: $slab;
+}
+
+
+#home{
+    width: 100%;
+    height: auto;
+    background: rgb(43,122,120);
+    background: linear-gradient(90deg, rgba(43,122,120,1) 20%, rgba(58,175,169,1) 47%, rgba(43,122,120,1) 82%);
+    background-size: cover;
+    
+    h5{
+        font-weight: 700;
+    
+        &:hover{
+            @include hoverAnimationIn;
+            color: $light;
+        }
+    
+        &:not(:hover){
+            @include hoverAnimationOut;
+        }
+    }
+
+    #login{
+        text-decoration: none;
+        color: $white;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+    .btn{
+        width: 5rem;
+        background-color: $black; 
+    
+        &:hover{
+            background-color: $green;
+        }
+    
+    }
+
+    #card{
+
+        
+        .btn{
+            width: 8rem;
+            background-color: $black;
+            
+            &:hover{
+                background-color: $green;
+            }
+        }
+        
+        &:hover{
+            box-shadow: $light 0px 10px 36px 0px, $light 0px 0px 0px 1px;
+            @include hoverAnimationIn;
+        }
+
+        &:not(:hover){
+            @include hoverAnimationOut;
+        }
+    }
+
+    .searchinput{
+        border: 1px solid $green;
+        height: 4vh;
+        display: none;
+    }
+
+    .searchinputbtn{
+        display: none;
+    }
+
+    .startingprice{
+        padding-top: 1px;
+    }
+
+    .closeup{
+        margin-top: 10px !important;
+        margin-right: 14px;
+        display: none;
+        cursor: pointer;
+    }
+
+    .morebtn{
+        transform: rotate(180deg);
+    }
+}
+
+.logo {
+    position: relative;
+    width: 4vw;
+    height: 9vh;
+
+    &:hover{
+         @include hoverAnimationIn;
+    }
+
+    &:not(:hover){
+         @include hoverAnimationOut;
+    }
+}
+
+#partners{
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    background-color: $light;
+    background-size: cover;
+
+    .searchinputcomp{
+        border: 1px solid $green;
+        height: 4vh;
+        display: none;
+    }
+
+    .searchinputcompbtn{
+        display: none;
+    }
+
+    .closeupcomp{
+        display: none;
+        cursor: pointer;
+    }
+
+}
+
+.gradient-custom-2 {
+    background: #fccb90;
+    background: linear-gradient(to left, #036666, #248277, #469D89, #67B99A);
+    background-size: cover;
+
+    .btn{
+        width: 10rem;
+        background-color: $black; 
+    
+        &:hover{
+            background-color: $darkgreen;
+        }
+    
+    }
+
+    #login{
+        text-decoration: none;
+        color: $white;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.log {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-hover {
+    transform: rotate(200deg);
+    width: 5vh;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -8;
+    display: contents;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 1;
+    animation-name: shooting-star;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    ;
+  }
+
+  @keyframes shooting-star {
+    0% {
+      transform: translate(-100%, -100%);
+      opacity: 1;
+
+    }
+
+    10% {
+      transform: translate(0, 0);
+      opacity: 1;
+
+    }
+
+    90% {
+      transform: translate(100%, 150%);
+      opacity: 1;
+
+    }
+
+    100% {
+      transform: translate(500%, 200%);
+      opacity: 0;
+      transform: rotate(20deg);
+    }
+  }
+
+  #passreset{
+    height: 100vh;
+    background: rgb(254,255,255);
+    background: linear-gradient(90deg, rgba(254,255,255,1) 0%, rgba(222,242,241,1) 50%, rgba(254,255,255,1) 100%);
+  }
+
+  #profile{
+    background-color: $light;
+
+    .btn{
+        background-color: $darkgreen;
+
+        &:hover{
+            background-color: $green;
+        }
+    }
+  }
+
+  #footer{
+    background: $black;
+    height: 30vh;
+  }

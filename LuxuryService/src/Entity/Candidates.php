@@ -116,27 +116,6 @@ class Candidates
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
-     */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255, nullable=false)
-     */
-    private $password;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="availability", type="boolean", nullable=false)
-     */
-    private $availability;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="experience", type="string", length=255, nullable=false)
      */
     private $experience;
@@ -364,42 +343,6 @@ class Candidates
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    public function getPassword(): ?string
-    {
-        return $this->password;
-    }
-
-    public function setPassword(string $password): self
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    public function isAvailability(): ?bool
-    {
-        return $this->availability;
-    }
-
-    public function setAvailability(bool $availability): self
-    {
-        $this->availability = $availability;
-
-        return $this;
-    }
-
     public function getExperience(): ?string
     {
         return $this->experience;
@@ -507,6 +450,5 @@ class Candidates
 
         return $this;
     }
-
 
 }

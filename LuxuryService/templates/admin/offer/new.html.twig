@@ -1,0 +1,86 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}New Client{% endblock %}
+
+{% block stylesheets %}
+    <link href="/LuxuryService/public/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create a new Offer!</h1>
+                        </div>
+
+                        <form name="save_client" class="user" action="{{ path('app_admin_offer_save') }}" method="post">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input type="text" name="reference" class="form-control form-control-user" id="reference"
+                                        placeholder="Offer Reference">
+                                </div>
+                                <div class="form-group">
+                                    <input type="textarea" name="description" class="form-control form-control-user" id="description"
+                                        placeholder="Description">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control form-control-user" id="title"
+                                    placeholder="Job Title">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="type" class="form-control form-control-user" id="type"
+                                    placeholder="Job Type">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="location" class="form-control form-control-user" id="location"
+                                    placeholder="Location">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="salary" class="form-control form-control-user" id="salary"
+                                    placeholder="Salary">
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox small">
+                                    <input type="checkbox" name="activity" value="true" class="custom-control-input" id="activity">
+                                    <label class="custom-control-label" for="activity">Active?</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="job_category_id">Job Category</label>
+                                <select name="job_category_id" id="job_category_id">
+                                    {% for job_category in job_categories %}
+                                    <option value="{{ job_category.id }}">{{ job_category.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client_id">Client</label>
+                                <select name="client_id" id="client_id">
+                                    {% for client in clients %}
+                                    <option value="{{ client.id }}">{{ client.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                 Add
+                            </button>
+                            <hr>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

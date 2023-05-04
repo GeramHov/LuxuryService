@@ -3,15 +3,22 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+<div class="container text-center" style="padding-top: 160px; padding-bottom: 40px">
+    <h5>Please create an account</h5>
+</div>
+<div class="regiterform" style="padding-bottom: 20vh">
+    <div class="container" style="width: 50vw">
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            <div class="text-center">
+                <button type="submit" class="btn gradient secondary waves-effect waves-light page-scroll" style="margin-top: 20px">Sign up</button>
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
 {% endblock %}

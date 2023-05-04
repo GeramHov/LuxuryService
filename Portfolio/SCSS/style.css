@@ -1,0 +1,732 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cousine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+.text-lighted {
+  color: #a4b3b6;
+}
+
+.text-darken {
+  color: #2a1b3d;
+}
+
+.bg-cerise {
+  background-color: #d83f87;
+}
+
+.bg-purple {
+  background-color: #8265a7;
+}
+
+.bg-night {
+  background-color: #44318d;
+}
+
+.bg-darken {
+  background-color: #2a1b3d;
+}
+
+.bg-lighted {
+  background-color: #a4b3b6;
+}
+
+.flagicon {
+  width: 25px;
+  height: 25px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  cursor: default;
+}
+
+h4 {
+  font-family: "Oswald", sans-serif;
+}
+h4:hover {
+  transform: translate(10px);
+  text-decoration: underline;
+  transition: 0.2s ease-in-out;
+}
+h4:not(:hover) {
+  transform: translate(0);
+  transition: 0.2s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+.uparrow {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 99;
+  display: none;
+}
+
+body {
+  background-image: url(../IMAGES/background_wide_hd.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+body #home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+body #logo {
+  font-weight: 900;
+  font-size: 36px;
+  rotate: 270deg;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+}
+body #logo:hover {
+  color: #ffffff;
+  transform: scale(1.02);
+  transition: 0.2s ease;
+  filter: brightness(100%);
+}
+body #logo:not(:hover) {
+  transform: scale(1);
+  transition: 0.2s ease;
+}
+body button {
+  background: #d83f87 !important;
+  width: 75%;
+}
+body button:hover {
+  background: #a4b3b6 !important;
+  transition: 0.2s ease;
+}
+body button:not(:hover) {
+  background: #d83f87 !important;
+  transition: 0.2s ease;
+}
+body #myphoto {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  opacity: 0.8;
+  transform: rotate(9deg);
+}
+body #myphoto:hover {
+  border: 1px solid #ffffff;
+  opacity: 0.9;
+  transform: scale(1.01);
+  transition: 0.4s ease-in;
+  transform: rotate(9deg);
+}
+body #myphoto:not(:hover) {
+  transform: scale(1);
+  transition: 0.4s ease-out;
+  transform: rotate(9deg);
+  opacity: 0.7;
+}
+body .purplecard {
+  height: 14vh;
+  overflow-y: hidden;
+}
+body .main .pacifico {
+  font-family: "Pacifico", cursive;
+  font-size: 72px;
+  font-weight: lighter;
+  cursor: default;
+}
+body .main h3 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  cursor: default;
+}
+body .main h1 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 96px;
+  font-weight: 900;
+  cursor: default;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(42, 27, 61);
+  background: linear-gradient(90deg, rgb(42, 27, 61) 14%, rgb(68, 49, 141) 64%, rgb(130, 101, 167) 100%);
+  opacity: 60%;
+  z-index: -1;
+}
+
+#projects {
+  overflow-x: hidden;
+  z-index: 2 !important;
+  height: auto;
+  width: 100%;
+  background-color: #a4b3b6;
+}
+#projects .progress-bar {
+  height: 5px;
+  border-radius: 6px;
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#projects .progress {
+  height: 100%;
+  display: inline-block;
+}
+#projects h1 {
+  font-size: 54px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+}
+#projects h6 {
+  font-family: "Oswald", sans-serif;
+}
+#projects #projectbox {
+  position: relative;
+}
+#projects #projectbox .card {
+  padding-right: 3px;
+  background-color: #ffffff;
+}
+#projects #projectbox .card p {
+  font-size: 14px;
+}
+#projects #projectbox .card-body {
+  opacity: 95%;
+  filter: brightness(90%);
+}
+#projects #projectbox .card-body:hover {
+  box-shadow: rgb(248, 245, 245) 0px 18px 50px -10px;
+  transform: translateY(-12px);
+  transition: 0.5s ease;
+  opacity: 1;
+  filter: brightness(120%);
+}
+#projects #projectbox .card-body:not(:hover) {
+  transform: scale(1);
+  transition: 0.4s ease;
+}
+#projects #projectbox #leftarrowbtn, #projects #projectbox #rightarrowbtn {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  z-index: 5;
+  filter: opacity(40%);
+}
+#projects #projectbox #leftarrowbtn:hover, #projects #projectbox #rightarrowbtn:hover {
+  filter: opacity(99%);
+  transition: 0.3s ease;
+}
+#projects #projectbox #leftarrowbtn:not(:hover), #projects #projectbox #rightarrowbtn:not(:hover) {
+  filter: opacity(40%);
+  transition: 0.3s ease;
+}
+#projects #projectbox #leftarrowbtn {
+  left: 2vw;
+}
+#projects #projectbox #rightarrowbtn {
+  right: 2vw;
+}
+
+#about {
+  background-color: #fafafa;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 11;
+}
+#about h1 {
+  font-size: 54px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+}
+#about .about-box {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+#about .about-box p {
+  font-size: 24px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+#about .slider {
+  width: 500px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-align: center;
+  overflow: hidden;
+}
+#about .image-container {
+  width: 1500px;
+  height: 300px;
+  clear: both;
+  position: relative;
+  -webkit-transition: left 2s;
+  -moz-transition: left 2s;
+  -o-transition: left 2s;
+  transition: left 2s;
+}
+#about .slide {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+#about .buttons .blackbtn {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background-color: #2a1b3d;
+  cursor: pointer;
+}
+#about .whitebtn {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background-color: white;
+  cursor: pointer;
+  border: 4px solid #2a1b3d;
+}
+
+#mid {
+  background-image: url(../IMAGES/about.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 40vh;
+  overflow-x: hidden;
+  z-index: 99;
+}
+
+#contact {
+  background-image: url(../IMAGES/contact.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  z-index: 99;
+}
+#contact h1 {
+  font-size: 54px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+}
+#contact h2, #contact h3, #contact h4, #contact h5,
+#contact .h1, #contact .h2, #contact .h3, #contact .h4, #contact .h5 {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+}
+#contact .ftco-section {
+  padding: 7em 0;
+}
+#contact .ftco-no-pt {
+  padding-top: 0;
+}
+#contact .ftco-no-pb {
+  padding-bottom: 0;
+}
+#contact .heading-section {
+  font-size: 28px;
+  color: #ffffff;
+}
+#contact .img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#contact .form-control {
+  height: 52px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px;
+  border-radius: 0px;
+  box-shadow: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#contact .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#contact .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#contact .form-control:-ms-input-placeholder { /* IE 0+ */
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#contact .form-control:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+#contact .form-control:focus, #contact .form-control:active {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+#contact textarea.form-control {
+  height: inherit !important;
+}
+#contact .wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+}
+#contact .contact-wrap {
+  background: #272a34;
+}
+#contact .contact-wrap h3 {
+  color: #ffffff;
+}
+#contact .info-wrap {
+  background: #1c1e25;
+}
+#contact .info-wrap h3 {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  position: relative;
+}
+#contact .info-wrap .dbox {
+  width: 100%;
+  margin-bottom: 25px;
+}
+#contact .info-wrap .dbox:last-child() {
+  margin-bottom: 0;
+}
+#contact .info-wrap .dbox p {
+  margin-bottom: 0;
+}
+#contact .info-wrap .dbox p span {
+  font-weight: 400;
+  color: #ffffff;
+}
+#contact .info-wrap .dbox p a {
+  color: rgba(255, 255, 255, 0.3);
+}
+#contact .info-wrap .dbox .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+}
+#contact .info-wrap .dbox .icon span {
+  font-size: 20px;
+  color: #ffffff;
+}
+#contact .info-wrap .dbox .text {
+  width: calc(100% - 50px);
+}
+#contact button {
+  background: #d83f87 !important;
+  width: 75%;
+}
+#contact button:hover {
+  background: #a4b3b6 !important;
+  transition: 0.2s ease;
+}
+#contact button:not(:hover) {
+  background: #d83f87 !important;
+  transition: 0.2s ease;
+}
+#contact .contactForm .form-control {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0;
+}
+
+footer {
+  background-color: #44318d;
+  width: 100%;
+  height: 25vh;
+  overflow: hidden;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+}
+footer p {
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  color: #f2f2f2;
+}
+footer img.icon {
+  filter: grayscale(0.7);
+  opacity: 0.5;
+}
+footer img.icon:hover {
+  filter: none;
+  opacity: 1;
+  transform: 1.03;
+  transition: 0.2s ease;
+}
+
+@media (max-width: 1600px) {
+  #logo {
+    font-weight: 600;
+    font-size: 32px !important;
+    rotate: 270deg;
+    position: absolute;
+    top: 12vh !important;
+    left: 0;
+  }
+  #myphoto {
+    width: 185px !important;
+    height: 185px !important;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: rotate(9deg);
+  }
+  #myphoto:hover {
+    border: 1px solid #ffffff;
+    opacity: 0.9;
+    transform: scale(1.01);
+    transition: 0.5s ease-in;
+    transform: rotate(9deg);
+  }
+  #myphoto:not(:hover) {
+    transform: scale(1);
+    transition: 0.4s ease-out;
+    transform: rotate(9deg);
+    opacity: 0.7;
+  }
+  .main {
+    position: relative;
+    bottom: 2vh;
+  }
+  h3 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 36px !important;
+    font-weight: 500;
+    cursor: default;
+  }
+  h1 {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 54px !important;
+    font-weight: 700;
+    cursor: default;
+  }
+  .pacifico {
+    font-family: "Pacifico", cursive;
+    font-size: 42px !important;
+    font-weight: lighter;
+    cursor: default;
+  }
+  button {
+    width: 100% !important;
+  }
+  #maincard {
+    height: 30vh !important;
+    margin-top: 0;
+    padding-top: 3px !important;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 13px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  div.purplecard {
+    height: 50vh !important;
+  }
+}
+@media (max-width: 1400px) {
+  #maincard {
+    width: 25vw !important;
+  }
+  #maincard h4 {
+    font-size: 18px !important;
+  }
+  #rightarrowbtn {
+    width: 4vw;
+    height: 4vh;
+  }
+  #leftarrowbtn {
+    width: 4vw;
+    height: 4vh;
+  }
+  p#intro {
+    padding-top: 0 !important;
+  }
+}
+@media (max-width: 1023px) {
+  #logo {
+    font-weight: 600;
+    font-size: 26px !important;
+    rotate: 270deg;
+    position: absolute;
+    top: 8vh !important;
+    left: 0;
+  }
+  div.purplecard {
+    display: none;
+  }
+  img#myphoto {
+    position: relative;
+    right: 65% !important;
+  }
+  #showbtn {
+    display: none !important;
+  }
+  #rightarrowbtn {
+    top: 28% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+  #leftarrowbtn {
+    top: 28% !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+  #maincard {
+    width: 35vw !important;
+  }
+  #maincard h4 {
+    font-size: 22px !important;
+  }
+  #myphoto {
+    width: 240px !important;
+    height: 240px !important;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: rotate(9deg);
+  }
+  #myphoto:hover {
+    border: 1px solid #ffffff;
+    opacity: 0.9;
+    transform: scale(1.01);
+    transition: 0.4s ease-in;
+    transform: rotate(9deg);
+  }
+  #myphoto:not(:hover) {
+    transform: scale(1);
+    transition: 0.4s ease-out;
+    transform: rotate(9deg);
+    opacity: 0.7;
+  }
+}
+@media (max-width: 767px) {
+  #logo {
+    font-weight: 600;
+    font-size: 18px !important;
+    rotate: 270deg;
+    position: absolute;
+    top: 6vh !important;
+    left: 0;
+  }
+  #rightarrowbtn {
+    top: 6% !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  #leftarrowbtn {
+    top: 6% !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  #maincard {
+    width: 42vw !important;
+    flex: auto;
+    margin: 0 !important;
+    height: 15vh !important;
+  }
+  #maincard h4 {
+    font-size: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  h1#myportfolio {
+    font-size: 30px !important;
+  }
+  div.main {
+    padding-top: 25px !important;
+    padding-right: 25px !important;
+    text-align: start;
+  }
+  img#myphoto {
+    position: relative;
+    right: 65% !important;
+  }
+  p#intro {
+    display: none;
+  }
+  div.purplecard {
+    display: none;
+  }
+  h1#section-project {
+    font-size: 30px !important;
+  }
+  #showbtn {
+    display: none !important;
+  }
+  .about-box p i {
+    font-size: 20px;
+  }
+  .about-box {
+    text-align: center !important;
+  }
+  div.container.slider {
+    width: 95vw !important;
+  }
+  div#mid {
+    height: 10vh !important;
+  }
+  h1#section-contact {
+    font-size: 30px !important;
+  }
+  img.icon {
+    width: 25px;
+    height: 25px;
+  }
+  footer {
+    height: 18vh;
+  }
+  #cardbox p {
+    font-size: 8px;
+  }
+  #myphoto {
+    width: 190px !important;
+    height: 190px !important;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: rotate(9deg);
+  }
+  #myphoto:hover {
+    border: 1px solid #ffffff;
+    opacity: 0.9;
+    transform: scale(1.01);
+    transition: 0.4s ease-in;
+    transform: rotate(9deg);
+  }
+  #myphoto:not(:hover) {
+    transform: scale(1);
+    transition: 0.4s ease-out;
+    transform: rotate(9deg);
+    opacity: 0.7;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

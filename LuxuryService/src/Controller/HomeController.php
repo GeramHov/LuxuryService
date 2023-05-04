@@ -40,30 +40,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/login', name: 'app_login')]
-    public function login(): Response
-    {
-        return $this->render('home/login.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
-    #[Route('/profile', name: 'app_profile')]
-    public function profile(): Response
-    {
-        return $this->render('home/profile.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
-    #[Route('/register', name: 'app_register')]
-    public function register(): Response
-    {
-        return $this->render('home/register.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
     #[Route('/show-index', name: 'app_show_index')]
     public function showIndex(): Response
     {
@@ -71,4 +47,20 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    // #[Route('/admin', name: 'app_admin')]
+    // public function admin(): Response
+    // {
+    //     return $this->render('admin/admin.twig', [
+    //         'controller_name' => 'HomeController',
+    //     ]);
+    // }
+
+    // #[Route('/log-in', name: 'app_log-in')]
+    // public function logIn(): Response
+    // {
+    //     return $this->render('login/login.html.twig', [
+    //         'controller_name' => 'HomeController',
+    //     ]);
+    // }
 }
