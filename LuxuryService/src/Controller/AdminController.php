@@ -24,9 +24,10 @@ class AdminController extends AbstractController
     #[Route('/admin/clients/list', name: 'app_admin_client_list')]
     public function clientList(EntityManagerInterface $entityManager): Response
     {
-        $clients = $entityManager->getRepository(Clients::class);
+        $clients = $entityManager->getRepository(Clients::class)->findAll();
         return $this->render('admin/client/index.html.twig', [
             'controller_name' => 'AdminController',
+            'clients' => $clients
         ]);
     }
 
@@ -56,10 +57,7 @@ class AdminController extends AbstractController
             $entityManager->persist($client);
             $entityManager->flush();
 
-        // dd($request->request);
-        return $this->render('admin/client/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
+            return $this->redirectToRoute('app_admin_client_list');
     }
 
     // OFFERS
